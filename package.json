@@ -8,7 +8,9 @@
     "build": "babel src -s -D -d dist --presets es2015,stage-0",
     "start": "node dist",
     "prestart": "npm run -s build",
-    "test": "eslint src"
+    "test": "eslint src",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
@@ -32,7 +34,8 @@
     "compression": "^1.5.2",
     "cors": "^2.7.1",
     "express": "^4.13.3",
-    "resource-router-middleware": "^0.5.1"
+    "resource-router-middleware": "^0.5.1",
+    "snyk": "^1.30.1"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
@@ -41,5 +44,6 @@
     "babel-preset-stage-0": "^6.5.0",
     "eslint": "^3.1.1",
     "nodemon": "^1.9.2"
-  }
+  },
+  "snyk": true
 }
